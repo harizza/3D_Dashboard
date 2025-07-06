@@ -3,14 +3,14 @@ import useChillerData from "../hooks/useChillerData";
 import { chillerCalc } from "../hooks/chillerCalc";
 import HmiChiller from "../components/HMIChiller";
 import HmiSensor from "../components/HMISensor";
-import useLineSensorData from "../hooks/useLineSensorData"; // <-- tambahan
+import useLineSensorData from "../hooks/useLineSensorData";
 
 const floors = [1, 3, 6];
 const lines = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 
 function AllData() {
   const { flowRate, velocity, consumption, frequency } = useChillerData();
-  const { suhu, rh, pressure } = useLineSensorData(); // <-- tambahan
+  const { suhu, rh, pressure } = useLineSensorData();
 
   const [showChillerModal, setShowChillerModal] = useState(false);
   const [showSensorModal, setShowSensorModal] = useState(false);
@@ -19,36 +19,39 @@ function AllData() {
   const hasil = useMemo(() => chillerCalc(frequencySafe), [frequencySafe]);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
-      <div className="max-w-6xl mx-auto bg-white shadow-md rounded-lg p-6">
-        <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center">
-          Realtime Chiller Monitoring
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 py-10 px-4">
+      <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-xl p-8">
+        <h1 className="text-4xl font-bold text-center text-blue-800 mb-8">
+          💧 Realtime Chiller & Sensor Monitoring
         </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm md:text-base">
-          <div className="bg-blue-50 p-4 rounded shadow-sm">
-            <h2 className="font-semibold text-blue-600 mb-2">Realtime Sensor</h2>
-            <ul className="space-y-1">
-              <li><span className="font-medium">Flow Rate:</span> {flowRate ?? "Waiting..."} m³/h</li>
-              <li><span className="font-medium">Velocity:</span> {velocity ?? "Waiting..."} m/s</li>
-              <li><span className="font-medium">Consumption:</span> {consumption ?? "Waiting..."} m³</li>
+        {/* Data Chiller */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {/* Realtime */}
+          <div className="bg-blue-100 rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <h2 className="text-lg font-semibold text-blue-700 mb-3">Realtime Sensor</h2>
+            <ul className="space-y-2 text-sm text-blue-900">
+              <li><span className="font-semibold">Flow Rate:</span> {flowRate ?? "Loading..."} m³/h</li>
+              <li><span className="font-semibold">Velocity:</span> {velocity ?? "Loading..."} m/s</li>
+              <li><span className="font-semibold">Consumption:</span> {consumption ?? "Loading..."} m³</li>
             </ul>
           </div>
 
-          <div className="bg-green-50 p-4 rounded shadow-sm">
-            <h2 className="font-semibold text-green-600 mb-2">Calculated Performance</h2>
-            <ul className="space-y-1">
-              <li><span className="font-medium">Frequency:</span> {frequency !== null ? frequency.toFixed(2) + " Hz" : "Waiting..."}</li>
-              <li><span className="font-medium">Flow:</span> {hasil.Q.toFixed(2)} m³/h</li>
-              <li><span className="font-medium">Velocity:</span> {hasil.velocity.toFixed(3)} m/s</li>
-              <li><span className="font-medium">COP:</span> {hasil.cop_operasional.toFixed(2)}</li>
-              <li><span className="font-medium">Energy (Monthly):</span> {hasil.energi_bulan.toFixed(1)} kWh</li>
-              <li><span className="font-medium">Cost (Monthly):</span> Rp {hasil.biaya_bulan.toLocaleString()}</li>
-              <li><span className="font-medium">Energy Saving:</span> {hasil.saving_energi_pct.toFixed(2)}%</li>
-              <li><span className="font-medium">Cost Saving:</span> Rp {hasil.saving_biaya_rp.toLocaleString()}</li>
+          {/* Perhitungan */}
+          <div className="bg-green-100 rounded-xl shadow-sm p-6 hover:shadow-md transition">
+            <h2 className="text-lg font-semibold text-green-700 mb-3">Performance Calculation</h2>
+            <ul className="space-y-2 text-sm text-green-900">
+              <li><span className="font-semibold">Frequency:</span> {frequency !== null ? frequency.toFixed(2) + " Hz" : "Loading..."}</li>
+              <li><span className="font-semibold">Flow:</span> {hasil.Q.toFixed(2)} m³/h</li>
+              <li><span className="font-semibold">Velocity:</span> {hasil.velocity.toFixed(3)} m/s</li>
+              <li><span className="font-semibold">COP:</span> {hasil.cop_operasional.toFixed(2)}</li>
+              <li><span className="font-semibold">Energy (Monthly):</span> {hasil.energi_bulan.toFixed(1)} kWh</li>
+              <li><span className="font-semibold">Cost (Monthly):</span> Rp {hasil.biaya_bulan.toLocaleString()}</li>
+              <li><span className="font-semibold">Energy Saving:</span> {hasil.saving_energi_pct.toFixed(2)}%</li>
+              <li><span className="font-semibold">Cost Saving:</span> Rp {hasil.saving_biaya_rp.toLocaleString()}</li>
               <li>
-                <span className="font-medium">Flow Status:</span>{" "}
-                <span className={hasil.flow_valid ? "text-green-600 font-bold" : "text-red-600 font-bold"}>
+                <span className="font-semibold">Flow Status:</span>{" "}
+                <span className={hasil.flow_valid ? "text-green-700 font-bold" : "text-red-600 font-bold"}>
                   {hasil.flow_valid ? "✅ Valid" : "❌ Tidak Cukup"}
                 </span>
               </li>
@@ -56,65 +59,86 @@ function AllData() {
           </div>
         </div>
 
-        {/* Tombol HMI */}
-        <div className="mt-6 text-center flex justify-center gap-4 flex-wrap">
+        {/* Tombol Panel */}
+        <div className="flex justify-center flex-wrap gap-4 mb-10">
           <button
             onClick={() => setShowChillerModal(true)}
-            className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded shadow"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md transition"
           >
-            Tampilkan HMI Panel – Chiller
+            📟 Panel HMI – Chiller
           </button>
           <button
             onClick={() => setShowSensorModal(true)}
-            className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded shadow"
+            className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow-md transition"
           >
-            Tampilkan HMI Panel – Sensor
+            🌡️ Panel HMI – Sensor
           </button>
         </div>
 
-        {/* ========================= Sensor Suhu, RH, Pressure ========================= */}
-        <div className="mt-10">
-          <h2 className="text-2xl font-bold text-gray-700 mb-4 text-center">
-            Monitoring Sensor per Lantai & Line
+        {/* Sensor Perlantai */}
+        <div>
+          <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
+            🌇 Sensor Suhu, RH, dan Tekanan per Lantai
           </h2>
 
           {floors.map((floor) => (
-            <div key={floor} className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-600 mb-2">Lantai {floor}</h3>
+            <div key={floor} className="mb-10">
+              <h3 className="text-xl font-bold text-gray-700 mb-3">
+                🏢 Lantai {floor}
+              </h3>
 
-              <div className="overflow-x-auto">
-                <table className="w-full table-auto border text-sm md:text-base">
-                  <thead>
-                    <tr className="bg-gray-200 text-left">
-                      <th className="px-2 py-1 border">Line</th>
+              <div className="overflow-x-auto rounded-lg shadow-md">
+                <table className="min-w-full table-auto text-sm text-gray-800">
+                  <thead className="bg-blue-100 sticky top-0">
+                    <tr>
+                      <th className="px-3 py-2 text-left border border-gray-300">Parameter</th>
                       {lines.map((line) => (
-                        <th key={line} className="px-2 py-1 border">{line}</th>
+                        <th key={line} className="px-3 py-2 border border-gray-300 text-center">
+                          Line {line}
+                        </th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td className="px-2 py-1 font-medium border">Suhu (°C)</td>
+                    {/* Suhu */}
+                    <tr className="bg-white hover:bg-blue-50 transition">
+                      <td className="px-3 py-2 font-medium border border-gray-200">🌡️ Suhu (°C)</td>
                       {lines.map((line) => (
-                        <td key={line} className="px-2 py-1 border text-center">
-                          {suhu[`SL${floor}${line}`]?.toFixed(1) ?? "–"}
+                        <td key={line} className="px-3 py-2 border border-gray-200 text-center">
+                          {suhu[`SL${floor}${line}`] !== undefined
+                            ? <span className="inline-block bg-blue-200 text-blue-800 px-2 py-0.5 rounded text-xs font-semibold">
+                                {suhu[`SL${floor}${line}`].toFixed(1)}
+                              </span>
+                            : "–"}
                         </td>
                       ))}
                     </tr>
-                    <tr>
-                      <td className="px-2 py-1 font-medium border">RH (%)</td>
+
+                    {/* RH */}
+                    <tr className="bg-gray-50 hover:bg-green-50 transition">
+                      <td className="px-3 py-2 font-medium border border-gray-200">💧 RH (%)</td>
                       {lines.map((line) => (
-                        <td key={line} className="px-2 py-1 border text-center">
-                          {rh[`RHL${floor}${line}`]?.toFixed(1) ?? "–"}
+                        <td key={line} className="px-3 py-2 border border-gray-200 text-center">
+                          {rh[`RHL${floor}${line}`] !== undefined
+                            ? <span className="inline-block bg-green-200 text-green-800 px-2 py-0.5 rounded text-xs font-semibold">
+                                {rh[`RHL${floor}${line}`].toFixed(1)}
+                              </span>
+                            : "–"}
                         </td>
                       ))}
                     </tr>
+
+                    {/* Pressure hanya di lantai 1 */}
                     {floor === 1 && (
-                      <tr>
-                        <td className="px-2 py-1 font-medium border">Pressure (Pa)</td>
+                      <tr className="bg-white hover:bg-yellow-50 transition">
+                        <td className="px-3 py-2 font-medium border border-gray-200">🧭 Tekanan (Pa)</td>
                         {lines.map((line) => (
-                          <td key={line} className="px-2 py-1 border text-center">
-                            {pressure[`PAL1${line}`]?.toFixed(1) ?? "–"}
+                          <td key={line} className="px-3 py-2 border border-gray-200 text-center">
+                            {pressure[`PAL1${line}`] !== undefined
+                              ? <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-semibold">
+                                  {pressure[`PAL1${line}`].toFixed(1)}
+                                </span>
+                              : "–"}
                           </td>
                         ))}
                       </tr>

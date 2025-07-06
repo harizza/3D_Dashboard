@@ -9,7 +9,7 @@ import HmiSensor from "../components/HMISensor";
 import useLineSensorData from "../hooks/useLineSensorData";
 import FullAllSystem from "../assets/3d/FullAllSystem.glb";
 
-const Chiller = ({ setShowChillerModal, ...props }) => {
+const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
   const chillerRef = useRef();
   const { nodes, materials } = useGLTF(FullAllSystem);
   const { suhu, rh, pressure } = useLineSensorData();
@@ -5562,9 +5562,18 @@ const Chiller = ({ setShowChillerModal, ...props }) => {
           position={[7.191, 50.168, -6.122]}
           rotation={[0, Math.PI / 2, 0]}
           scale={[0.029, 0.153, 0.246]}>
-          onClick={() => setShowChillerModal(true)} // ⬅ ini kuncinya
-          onPointerOver={() => (document.body.style.cursor = 'pointer')}
-          onPointerOut={() => (document.body.style.cursor = 'default')}
+          <mesh
+          onClick={(e) => {
+            e.stopPropagation(); // ⛔️ supaya klik tidak bubble ke canvas lain
+            setShowChillerModal(true); // ✅ panggil function dari props
+          }}
+          >
+            <boxGeometry args={[2, 2, 2]} />
+            <meshStandardMaterial
+              transparent={true}
+              opacity={0} // 0 = tidak terlihat
+            />
+        </mesh>
           <mesh
             name="Cube171"
             geometry={nodes.Cube171.geometry}
@@ -5586,14 +5595,37 @@ const Chiller = ({ setShowChillerModal, ...props }) => {
             material={materials['Material.051']}
           />
         </group>
+        {/* <mesh
+          position={[10, 0, 0]}
+          onClick={(e) => {
+            e.stopPropagation(); // ⛔️ supaya klik tidak bubble ke canvas lain
+            setShowSensorModal(true); // ✅ panggil function dari props
+          }}
+        >
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color="orange" />
+        </mesh> */}
         <group
           name="HMI_Chiller1"
           position={[-7.742, 50.168, -4.438]}
           rotation={[0, -1.571, 0]}
           scale={[0.029, 0.153, 0.246]}>
-          onClick={() => setShowChillerModal(true)} // ⬅ ini kuncinya
-          onPointerOver={() => (document.body.style.cursor = 'pointer')}
-          onPointerOut={() => (document.body.style.cursor = 'default')}
+          onClick={(e) => {
+            e.stopPropagation(); // ⛔️ supaya klik tidak bubble ke canvas lain
+            setShowChillerModal(true); // ✅ panggil function dari props
+          }}
+          <mesh
+          onClick={(e) => {
+            e.stopPropagation(); // ⛔️ supaya klik tidak bubble ke canvas lain
+            setShowChillerModal(true); // ✅ panggil function dari props
+          }}
+          >
+            <boxGeometry args={[2, 2, 2]} />
+            <meshStandardMaterial
+              transparent={true}
+              opacity={0} // 0 = tidak terlihat
+            />
+        </mesh>
           <mesh
             name="Cube172"
             geometry={nodes.Cube172.geometry}
@@ -5615,7 +5647,22 @@ const Chiller = ({ setShowChillerModal, ...props }) => {
             material={materials['Material.051']}
           />
         </group>
-        <group name="SensorFlow" position={[-0.578, 49.168, -9.116]} scale={[0.069, 0.067, 0.146]}>
+        <group name="SensorFlow" 
+          position={[-0.578, 49.168, -9.116]} 
+          scale={[0.069, 0.067, 0.146]}
+          >
+          <mesh
+          onClick={(e) => {
+            e.stopPropagation(); // ⛔️ supaya klik tidak bubble ke canvas lain
+            setShowSensorModal(true); // ✅ panggil function dari props
+          }}
+          >
+            <boxGeometry args={[2, 2, 2]} />
+            <meshStandardMaterial
+              transparent={true}
+              opacity={0} // 0 = tidak terlihat
+            />
+          </mesh>
           <mesh
             name="Cube173"
             geometry={nodes.Cube173.geometry}
