@@ -5693,7 +5693,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
         >
           {`T: ${suhu["SL6A"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL6A"]?.toFixed(1) ?? "-"}`}
         </Text>
-                <mesh
+        <mesh
           name="SensorALT5"
           geometry={nodes.SensorALT5.geometry}
           material={nodes.SensorALT5.material}
@@ -5719,6 +5719,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-9.41, 37.822, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[-9.41, 38, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL4A"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL4A"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorALT3"
           geometry={nodes.SensorALT3.geometry}
@@ -5745,6 +5757,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-9.41, 29.234, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[-9.41, 29.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL2A"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL2A"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorALT1"
           geometry={nodes.SensorALT1.geometry}
@@ -5753,7 +5777,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={[1, 1, 0.28]}
         />
         <Text
-          position={[-9.41, 25.4, -12.58]} // agak di atas mesh
+          position={[-9.41, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
           color="white"
@@ -5790,6 +5814,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-4.277, 42.184, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[-4.3, 42.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL5B"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL5B"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorBLT4"
           geometry={nodes.SensorBLT4.geometry}
@@ -5797,6 +5833,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-4.277, 37.822, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[-4.3, 38, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL4B"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL4B"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorBLT3"
           geometry={nodes.SensorBLT3.geometry}
@@ -5823,6 +5871,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-4.277, 29.234, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[-4.3, 29.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL2B"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL2B"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorBLT1"
           geometry={nodes.SensorBLT1.geometry}
@@ -5831,7 +5891,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={[1, 1, 0.28]}
         />
         <Text
-          position={[-4.3, 25.4, -12.58]} // agak di atas mesh
+          position={[-4.3, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
           color="white"
@@ -5868,6 +5928,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[1.137, 42.184, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[1.3, 42.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL5C"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL5C"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorCLT4"
           geometry={nodes.SensorCLT4.geometry}
@@ -5875,6 +5947,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[1.137, 37.822, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[1.3, 38, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL4C"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL4C"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorCLT3"
           geometry={nodes.SensorCLT3.geometry}
@@ -5901,6 +5985,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[1.137, 29.234, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[1.3, 29.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL2C"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL2C"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorCLT1"
           geometry={nodes.SensorCLT1.geometry}
@@ -5909,7 +6005,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={[1, 1, 0.28]}
         />
         <Text
-          position={[1.3, 25.4, -12.58]} // agak di atas mesh
+          position={[1.3, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
           color="white"
@@ -5946,6 +6042,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[6.176, 42.184, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[6.3, 42.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL5D"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL5D"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorDLT4"
           geometry={nodes.SensorDLT4.geometry}
@@ -5953,6 +6061,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[6.176, 37.822, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[6.3, 38, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL4D"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL4D"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorDLT3"
           geometry={nodes.SensorDLT3.geometry}
@@ -5979,6 +6099,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[6.176, 29.234, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[6.3, 29.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL2D"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL2D"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorDLT1"
           geometry={nodes.SensorDLT1.geometry}
@@ -5987,7 +6119,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={[1, 1, 0.28]}
         />
         <Text
-          position={[6.3, 25.4, -12.58]} // agak di atas mesh
+          position={[6.3, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
           color="white"
@@ -6024,6 +6156,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[11.623, 42.184, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[11.7, 42.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL5E"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL5E"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorELT4"
           geometry={nodes.SensorELT4.geometry}
@@ -6031,6 +6175,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[11.623, 37.822, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[11.7, 38, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL4E"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL4E"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorELT3"
           geometry={nodes.SensorELT3.geometry}
@@ -6057,6 +6213,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[11.623, 29.234, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[11.7, 29.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL2E"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL2E"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorELT1"
           geometry={nodes.SensorELT1.geometry}
@@ -6065,7 +6233,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={[1, 1, 0.28]}
         />
         <Text
-          position={[11.7, 25.4, -12.58]} // agak di atas mesh
+          position={[11.7, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
           color="white"
@@ -6102,6 +6270,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[16.702, 42.184, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[16.75, 42.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL5F"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL5F"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorFLT4"
           geometry={nodes.SensorFLT4.geometry}
@@ -6109,6 +6289,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[16.702, 37.822, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[16.75, 38, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL4F"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL4F"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorFLT3"
           geometry={nodes.SensorFLT3.geometry}
@@ -6135,6 +6327,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[16.702, 29.234, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[16.75, 29.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL2F"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL2F"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorFLT1"
           geometry={nodes.SensorFLT1.geometry}
@@ -6143,7 +6347,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={[1, 1, 0.28]}
         />
         <Text
-          position={[16.75, 25.4, -12.58]} // agak di atas mesh
+          position={[16.75, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
           color="white"
@@ -6180,6 +6384,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[22.173, 42.184, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[22.25, 42.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL5G"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL5G"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorGLT4"
           geometry={nodes.SensorGLT4.geometry}
@@ -6187,6 +6403,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[22.173, 37.822, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[22.25, 38, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL4G"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL4G"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorGLT3"
           geometry={nodes.SensorGLT3.geometry}
@@ -6213,6 +6441,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[22.173, 29.234, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[22.25, 29.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL2G"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL2G"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorGLT1"
           geometry={nodes.SensorGLT1.geometry}
@@ -6221,7 +6461,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={[1, 1, 0.28]}
         />
         <Text
-          position={[22.25, 25.4, -12.58]} // agak di atas mesh
+          position={[22.25, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
           color="white"
@@ -6258,13 +6498,36 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[27.375, 42.184, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[27.45, 42.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL5H"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL5H"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorHLT4"
           geometry={nodes.SensorHLT4.geometry}
           material={nodes.SensorHLT4.material}
           position={[27.375, 37.822, -12.233]}
           scale={[1, 1, 0.28]}
-        />
+        /><Text
+          position={[27.45, 38, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL4H"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL4H"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorHLT3"
           geometry={nodes.SensorHLT3.geometry}
@@ -6291,6 +6554,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[27.375, 29.234, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[27.45, 29.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL2H"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL2H"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorHLT1"
           geometry={nodes.SensorHLT1.geometry}
@@ -6299,7 +6574,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={[1, 1, 0.28]}
         />
         <Text
-          position={[27.45, 25.4, -12.58]} // agak di atas mesh
+          position={[27.45, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
           color="white"
@@ -6336,6 +6611,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[33.869, 42.184, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[33.95, 42.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL5I"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL5I"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorILT4"
           geometry={nodes.SensorILT4.geometry}
@@ -6343,6 +6630,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[33.869, 37.822, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[33.95, 38, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL4I"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL4I"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorILT3"
           geometry={nodes.SensorILT3.geometry}
@@ -6369,6 +6668,18 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[33.869, 29.234, -12.233]}
           scale={[1, 1, 0.28]}
         />
+        <Text
+          position={[33.95, 29.4, -12.58]} // agak di atas mesh
+          scale={[-1, 1, 1]}
+          fontSize={0.3}
+          color="white"
+          anchorX="center"
+          anchorY="middle"
+          maxWidth={2.5}
+          lineHeight={1.5}
+        >
+          {`T: ${suhu["SL2I"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL2I"]?.toFixed(1) ?? "-"}`}
+        </Text>
         <mesh
           name="SensorILT1"
           geometry={nodes.SensorILT1.geometry}
@@ -6377,7 +6688,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={[1, 1, 0.28]}
         />
         <Text
-          position={[33.95, 25.4, -12.58]} // agak di atas mesh
+          position={[33.95, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
           color="white"

@@ -5,7 +5,7 @@ import HmiChiller from "../components/HMIChiller";
 import HmiSensor from "../components/HMISensor";
 import useLineSensorData from "../hooks/useLineSensorData";
 
-const floors = [1, 3, 6];
+const floors = [1, 2, 3, 4, 5, 6]; // ✅ update: Lantai 1-6
 const lines = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 
 function AllData() {
@@ -25,9 +25,7 @@ function AllData() {
           💧 Realtime Chiller & Sensor Monitoring
         </h1>
 
-        {/* Data Chiller */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {/* Realtime */}
           <div className="bg-blue-100 rounded-xl shadow-sm p-6 hover:shadow-md transition">
             <h2 className="text-lg font-semibold text-blue-700 mb-3">Realtime Sensor</h2>
             <ul className="space-y-2 text-sm text-blue-900">
@@ -37,7 +35,6 @@ function AllData() {
             </ul>
           </div>
 
-          {/* Perhitungan */}
           <div className="bg-green-100 rounded-xl shadow-sm p-6 hover:shadow-md transition">
             <h2 className="text-lg font-semibold text-green-700 mb-3">Performance Calculation</h2>
             <ul className="space-y-2 text-sm text-green-900">
@@ -59,7 +56,6 @@ function AllData() {
           </div>
         </div>
 
-        {/* Tombol Panel */}
         <div className="flex justify-center flex-wrap gap-4 mb-10">
           <button
             onClick={() => setShowChillerModal(true)}
@@ -75,7 +71,7 @@ function AllData() {
           </button>
         </div>
 
-        {/* Sensor Perlantai */}
+        {/* Sensor per lantai (1–6) */}
         <div>
           <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
             🌇 Sensor Suhu, RH, dan Tekanan per Lantai
@@ -100,7 +96,6 @@ function AllData() {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* Suhu */}
                     <tr className="bg-white hover:bg-blue-50 transition">
                       <td className="px-3 py-2 font-medium border border-gray-200">🌡️ Suhu (°C)</td>
                       {lines.map((line) => (
@@ -113,8 +108,6 @@ function AllData() {
                         </td>
                       ))}
                     </tr>
-
-                    {/* RH */}
                     <tr className="bg-gray-50 hover:bg-green-50 transition">
                       <td className="px-3 py-2 font-medium border border-gray-200">💧 RH (%)</td>
                       {lines.map((line) => (
@@ -128,7 +121,6 @@ function AllData() {
                       ))}
                     </tr>
 
-                    {/* Pressure hanya di lantai 1 */}
                     {floor === 1 && (
                       <tr className="bg-white hover:bg-yellow-50 transition">
                         <td className="px-3 py-2 font-medium border border-gray-200">🧭 Tekanan (Pa)</td>
