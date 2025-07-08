@@ -1,6 +1,6 @@
 import * as THREE from 'three';
-import { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useRef, useState } from "react";
+import { useGLTF, Html } from "@react-three/drei";
 import { a } from "@react-spring/three";
 import { Text } from '@react-three/drei';
 
@@ -14,6 +14,16 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
   const { nodes, materials } = useGLTF(FullAllSystem);
   const { suhu, rh, pressure } = useLineSensorData();
 
+  const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
+
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [tooltipPos, setTooltipPos] = useState([0, 0, 0]);
+  const [activeTooltip, setActiveTooltip] = useState({
+    visible: false,
+    text: '',
+    position: [0, 0, 0],
+  });
   return (
     <a.group ref={chillerRef} {...props}>
       <group name="Scene">
@@ -378,6 +388,17 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           material={materials['Material.045']}
           position={[6.695, 51.473, 4.439]}
           scale={[3.626, 0.69, 1.761]}
+          onPointerOver={(e) => {
+            e.stopPropagation();
+            setActiveTooltip({
+              visible: true,
+              text: 'Cooling Tower 1',
+              position: e.point.toArray(),
+            });
+          }}
+          onPointerOut={() => {
+            setActiveTooltip((prev) => ({ ...prev, visible: false }));
+          }}
         />
         <mesh
           name="Cube006"
@@ -719,6 +740,17 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           material={materials['Material.045']}
           position={[-5.527, 51.473, 4.439]}
           scale={[3.626, 0.69, 1.761]}
+          onPointerOver={(e) => {
+            e.stopPropagation();
+            setActiveTooltip({
+              visible: true,
+              text: 'Cooling Tower 2',
+              position: e.point.toArray(),
+            });
+          }}
+          onPointerOut={() => {
+            setActiveTooltip((prev) => ({ ...prev, visible: false }));
+          }}
         />
         <mesh
           name="Cube056"
@@ -3131,6 +3163,17 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-11.196, 34.992, -2.675]}
           rotation={[0, 0, -1.571]}
           scale={1.246}
+          onPointerOver={(e) => {
+            e.stopPropagation();
+            setActiveTooltip({
+              visible: true,
+              text: 'Pipa Evaporator Leaving',
+              position: e.point.toArray(),
+            });
+          }}
+          onPointerOut={() => {
+            setActiveTooltip((prev) => ({ ...prev, visible: false }));
+          }}
         />
         <mesh
           name="Pipa_Evaporator_Entering"
@@ -3139,6 +3182,26 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-10.959, 34.988, -2.154]}
           rotation={[Math.PI / 2, 0, 0]}
           scale={1.246}
+
+          onPointerOver={(e) => {
+            e.stopPropagation();
+            setActiveTooltip({
+              visible: true,
+              text: 'Pipa Evaporator Entering',
+              position: e.point.toArray(),
+            });
+          }}
+          onPointerOut={() => {
+            setActiveTooltip((prev) => ({ ...prev, visible: false }));
+          }}
+        >
+        </mesh>
+        <mesh
+          geometry={nodes.Pipa_Evaporator_Entering.geometry}
+
+          position={[-10.959, 34.988, -2.154]}
+          rotation={[Math.PI / 2, 0, 0]}
+          scale={1.246}  
         />
         <mesh
           name="Cylinder029"
@@ -3517,6 +3580,17 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
             name="Cylinder015"
             geometry={nodes.Cylinder015.geometry}
             material={materials['Material.005']}
+            onPointerOver={(e) => {
+              e.stopPropagation();
+              setActiveTooltip({
+                visible: true,
+                text: 'Chiller 2',
+                position: e.point.toArray(),
+              });
+            }}
+            onPointerOut={() => {
+              setActiveTooltip((prev) => ({ ...prev, visible: false }));
+            }}
           />
           <mesh
             name="Cylinder015_1"
@@ -3556,6 +3630,17 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
             name="Sphere005"
             geometry={nodes.Sphere005.geometry}
             material={materials['Material.005']}
+            onPointerOver={(e) => {
+            e.stopPropagation();
+              setActiveTooltip({
+                visible: true,
+                text: 'Chiller 1',
+                position: e.point.toArray(),
+              });
+            }}
+            onPointerOut={() => {
+              setActiveTooltip((prev) => ({ ...prev, visible: false }));
+            }}
           />
           <mesh
             name="Sphere005_1"
@@ -6835,6 +6920,13 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           scale={0.569}
         />
       </group>
+      {activeTooltip.visible && (
+          <Html position={activeTooltip.position} center distanceFactor={8} occlude>
+            <div className="bg-white text-gray-800 px-3 py-1 rounded-md shadow-md border text-sm font-medium whitespace-nowrap">
+              {activeTooltip.text}
+            </div>
+          </Html>
+        )}
     </a.group>
   );
 };
