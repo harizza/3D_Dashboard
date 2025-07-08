@@ -5770,6 +5770,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-9.41, 46.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5789,6 +5790,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-9.41, 42.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5808,6 +5810,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-9.41, 38, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5827,6 +5830,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-9.41, 33.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5846,6 +5850,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-9.41, 29.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5865,6 +5870,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-9.41, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5884,6 +5890,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-4.3, 46.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5903,6 +5910,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-4.3, 42.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5922,6 +5930,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-4.3, 38, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5941,6 +5950,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-4.3, 33.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5960,6 +5970,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-4.3, 29.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5979,6 +5990,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[-4.3, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -5998,6 +6010,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[1.3, 46.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6017,6 +6030,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[1.3, 42.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6036,6 +6050,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[1.3, 38, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6055,6 +6070,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[1.3, 33.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6074,6 +6090,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[1.3, 29.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6093,6 +6110,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[1.3, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6112,6 +6130,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[6.3, 46.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6131,6 +6150,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[6.3, 42.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6150,6 +6170,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[6.3, 38, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6169,6 +6190,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[6.3, 33.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6188,6 +6210,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[6.3, 29.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6207,6 +6230,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[6.3, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6226,6 +6250,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[11.7, 46.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6245,6 +6270,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[11.7, 42.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6264,6 +6290,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[11.7, 38, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6283,6 +6310,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[11.7, 33.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6302,6 +6330,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[11.7, 29.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6321,6 +6350,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[11.7, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6340,6 +6370,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[16.75, 46.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6359,6 +6390,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[16.75, 42.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6378,6 +6410,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[16.75, 38, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6397,6 +6430,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[16.75, 33.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6416,6 +6450,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[16.75, 29.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6435,6 +6470,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[16.75, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6454,6 +6490,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[22.25, 46.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6473,6 +6510,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[22.25, 42.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6492,6 +6530,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[22.25, 38, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6511,6 +6550,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[22.25, 33.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6530,6 +6570,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[22.25, 29.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6549,6 +6590,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[22.25, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6568,6 +6610,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[27.45, 46.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6587,6 +6630,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[27.45, 42.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6605,6 +6649,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[27.45, 38, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6624,6 +6669,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[27.45, 33.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6643,6 +6689,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[27.45, 29.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6662,6 +6709,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[27.45, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6681,6 +6729,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[33.95, 46.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6700,6 +6749,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[33.95, 42.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6719,6 +6769,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[33.95, 38, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6738,6 +6789,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[33.95, 33.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6757,6 +6809,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[33.95, 29.4, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
@@ -6776,6 +6829,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           position={[33.95, 25.1, -12.58]} // agak di atas mesh
           scale={[-1, 1, 1]}
           fontSize={0.3}
+          fontWeight="bold"
           color="white"
           anchorX="center"
           anchorY="middle"
