@@ -17,13 +17,13 @@ const useLineSensorData = () => {
         const suhuKey = `SL${floor}${line}`;
         const rhKey = `RHL${floor}${line}`;
 
-        const socketSuhu = new WebSocket(`ws://10.171.28.15:1880/ws/${suhuKey}`);
+        const socketSuhu = new WebSocket(`ws://http://10.171.28.118/:1880/ws/${suhuKey}`);
         socketSuhu.onmessage = (e) => {
           setSuhu((prev) => ({ ...prev, [suhuKey]: parseFloat(e.data) }));
         };
         sockets.push(socketSuhu);
 
-        const socketRh = new WebSocket(`ws://10.171.28.15:1880/ws/${rhKey}`);
+        const socketRh = new WebSocket(`ws://http://10.171.28.118/:1880/ws/${rhKey}`);
         socketRh.onmessage = (e) => {
           setRh((prev) => ({ ...prev, [rhKey]: parseFloat(e.data) }));
         };
@@ -34,7 +34,7 @@ const useLineSensorData = () => {
     // Pressure khusus lantai 1
     lines.forEach((line) => {
       const pressureKey = `PAL1${line}`;
-      const socketPressure = new WebSocket(`ws://10.171.28.15:1880/ws/${pressureKey}`);
+      const socketPressure = new WebSocket(`ws://http://10.171.28.118/:1880/ws/${pressureKey}`);
       socketPressure.onmessage = (e) => {
         setPressure((prev) => ({ ...prev, [pressureKey]: parseFloat(e.data) }));
       };
