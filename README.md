@@ -20,7 +20,7 @@ Aplikasi visualisasi 3D interaktif berbasis web untuk monitoring sistem HVAC, se
 ### 1. 📥 Clone Repositori
 
 ```bash
-git clone https://github.com/username/3D_Dashboard.git
+git clone https://github.com/harizza/3D_Dashboard.git
 cd 3D_Dashboard
 ````
 
