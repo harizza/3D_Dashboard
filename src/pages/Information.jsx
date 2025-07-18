@@ -56,7 +56,7 @@ const Information = () => {
             <ul className="list-disc ml-5">
               <li>Clamp-on ultrasonic, akurasi ±1%</li>
               <li>Rentang: 0–12 m/s, suhu –40…+130 °C</li>
-              <li>Output: Modbus RTU, 4–20 mA, TCP opsional</li>
+              <li>Output: Modbus RTU, 4–20 mA, TCP</li>
               <li>Respon cepat (T₉₀ = 0,1 s), IP65/IP68</li>
               <li>Kompatibel dengan pipa DN40–DN1200</li>
             </ul>
