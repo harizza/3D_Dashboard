@@ -5,7 +5,7 @@ import { OrbitControls } from '@react-three/drei';
 import HmiChiller from "../components/HMIChiller";
 import HmiSensor from "../components/HMISensor";
 import Loader from '../components/Loader';
-import Chiller from '../models/chiller';
+import Chiller from '../models/Chiller';
 
 const AutoRotateUpdater = ({ controlsRef }) => {
   useFrame(() => {
