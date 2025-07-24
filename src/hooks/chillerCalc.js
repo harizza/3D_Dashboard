@@ -1,15 +1,15 @@
 // src/utils/chillerCalc.js
 
 const f_ref_1 = 41.0;
-const Q_ref_1 = 220;
+const Q_ref_1 = 185.3;
 const f_ref_2 = 42.0;
-const Q_ref_2 = 233;
+const Q_ref_2 = 189.3;
 const P_chiller = 351.7;
 const P_pompa_ref = 20.3;
 const COP = 6.0;
 const jam_operasi = 24.0;
 const tarif_listrik = 1440.0;
-const Q_min = 218.3;
+const Q_min = 181;
 const diameter_pipa = 0.219;
 
 const f_baseline = 50.0;
