@@ -1,10 +1,11 @@
-import { useMemo } from "react";
-import useChillerData from "../hooks/useChillerData";
+import { useState, useMemo } from "react";
 import { chillerCalc } from "../hooks/chillerCalc";
 
 const HMIChiller = ({ onClose }) => {
-  const { frequency } = useChillerData();
-  const frequencySafe = frequency ?? 0;
+  const [frequencyManual, setFrequencyManual] = useState("");
+  const [submittedFreq, setSubmittedFreq] = useState(null);
+
+  const frequencySafe = submittedFreq ?? 0;
   const hasil = useMemo(() => chillerCalc(frequencySafe), [frequencySafe]);
 
   const handleOverlayClick = (e) => {
@@ -17,13 +18,13 @@ const HMIChiller = ({ onClose }) => {
       className="fixed inset-0 bg-black bg-opacity-40 z-50 flex justify-center items-center px-4 py-6"
       onClick={handleOverlayClick}
     >
-      {/* Lapisan 1: Frame luar HMI */}
-      <div className="relative bg-[#EFECEC] rounded-2xl shadow-2xl w-full max-w-4xl aspect-[16/9] flex items-center justify-center border-1 border-gray-700">
+      {/* Frame luar HMI */}
+      <div className="relative bg-[#EFECEC] rounded-2xl shadow-2xl w-full max-w-4xl aspect-[16/9] flex items-center justify-center border border-gray-700">
         
-        {/* Lapisan 2: Panel tengah (abu gelap), tinggi 75%, full width */}
+        {/* Panel tengah (abu gelap) */}
         <div className="bg-gray-700 w-full h-[75%] flex items-center justify-center mx-90 shadow-inner">
 
-          {/* Lapisan 3: Konten utama (putih, bergaya industrial) */}
+          {/* Konten utama */}
           <div className="w-[90%] h-full bg-white shadow-lg overflow-auto border border-gray-300 p-4 font-mono text-xs md:text-sm space-y-4">
 
             {/* Header */}
@@ -37,9 +38,39 @@ const HMIChiller = ({ onClose }) => {
               </button>
             </div>
 
+            {/* Input Frequency Manual */}
+            <div className="bg-blue-50 p-3 rounded-md border border-blue-200 shadow-inner mb-4 space-y-2">
+              <div className="flex items-center gap-2">
+                <label htmlFor="freq" className="font-semibold">Input Frequency (Hz):</label>
+                <input
+                  id="freq"
+                  type="number"
+                  step="1"
+                  min="0"
+                  className="border px-2 py-1 rounded text-sm w-24"
+                  value={frequencyManual}
+                  onChange={(e) => setFrequencyManual(e.target.value)}
+                />
+                <button
+                  onClick={() => {
+                    const parsed = parseFloat(frequencyManual);
+                    if (!isNaN(parsed)) setSubmittedFreq(parsed);
+                  }}
+                  className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 text-sm"
+                >
+                  Run
+                </button>
+              </div>
+              {submittedFreq !== null && (
+                <div className="text-gray-700 text-sm">
+                  Frequency submitted: <span className="font-bold">{submittedFreq.toFixed(2)} Hz</span>
+                </div>
+              )}
+            </div>
+
             {/* Grid Panel Data */}
             <div className="grid grid-cols-2 gap-3 bg-green-50 p-3 rounded-md border border-green-200 shadow-inner">
-              <div><span className="font-semibold">Frequency:</span> {frequency !== null ? frequency.toFixed(2) + " Hz" : "Waiting..."}</div>
+              <div><span className="font-semibold">Frequency:</span> {frequencySafe.toFixed(2)} Hz</div>
               <div><span className="font-semibold">Flow:</span> {hasil.Q.toFixed(2)} m³/h</div>
               <div><span className="font-semibold">Velocity:</span> {hasil.velocity.toFixed(3)} m/s</div>
               <div><span className="font-semibold">COP:</span> {hasil.cop_operasional.toFixed(2)}</div>
