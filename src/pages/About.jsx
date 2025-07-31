@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const About = () => {
- return (
+  return (
     <section className="min-h-screen bg-gradient-to-br from-white via-blue-50 to-blue-100 py-16 px-6 md:px-20">
       <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg p-10">
         <h1 className="text-4xl font-bold text-blue-700 mb-6 border-b pb-2">
@@ -35,9 +35,14 @@ const About = () => {
         <p className="text-gray-600 text-sm mt-10">
           Sistem ini dikembangkan sebagai bagian dari inisiatif modernisasi proses industri Kalbe Nutritionals dalam menjaga kualitas dan efisiensi operasional.
         </p>
+
+        {/* Tambahan kredit */}
+        <p className="text-xs text-gray-500 mt-4">
+            Dibuat oleh <span className="font-medium text-blue-600">Harizza Haryantoro</span>, mahasiswa Universitas Gadjah Mada – PT Sanghiang Perkasa.
+        </p>
       </div>
     </section>
   );
 };
 
-export default About
+export default About;

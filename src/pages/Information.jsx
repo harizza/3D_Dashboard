@@ -88,6 +88,9 @@ const Information = () => {
           <p>
             Sistem HVAC ini dirancang untuk memastikan efisiensi energi, kestabilan lingkungan produksi, serta memenuhi standar kenyamanan termal dan higienitas di lingkungan industri Kalbe Nutritionals.
           </p>
+          <p className="text-xs text-gray-500 mt-4">
+            Dibuat oleh <span className="font-medium text-blue-600">Harizza Haryantoro</span>, mahasiswa Universitas Gadjah Mada – PT Sanghiang Perkasa.
+          </p>
         </div>
       </div>
     </section>

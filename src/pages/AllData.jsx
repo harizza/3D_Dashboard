@@ -146,7 +146,15 @@ function AllData() {
       {/* Modal */}
       {showChillerModal && <HmiChiller onClose={() => setShowChillerModal(false)} />}
       {showSensorModal && <HmiSensor onClose={() => setShowSensorModal(false)} />}
+
+      {/* Footer credit */}
+      <div className="text-center text-xs text-gray-500 mt-10 mb-4">
+        Dibuat oleh <span className="font-semibold text-blue-600">Harizza Haryantoro</span>,
+        mahasiswa Universitas Gadjah Mada – PT Sanghiang Perkasa.
+      </div>
     </div>
+
+          
   );
 }
 
