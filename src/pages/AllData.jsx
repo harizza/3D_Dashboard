@@ -5,7 +5,7 @@ import HmiChiller from "../components/HMIChiller";
 import HmiSensor from "../components/HMISensor";
 import useLineSensorData from "../hooks/useLineSensorData";
 
-const floors = [1, 2, 3, 4, 5, 6]; // ✅ update: Lantai 1-6
+const floors = [1, 2, 3, 4, 5, 6];
 const lines = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 
 function AllData() {
@@ -14,8 +14,10 @@ function AllData() {
 
   const [showChillerModal, setShowChillerModal] = useState(false);
   const [showSensorModal, setShowSensorModal] = useState(false);
+  const [frequencyManual, setFrequencyManual] = useState("");
+  const [submittedFreq, setSubmittedFreq] = useState(null);
 
-  const frequencySafe = frequency ?? 0;
+  const frequencySafe = submittedFreq ?? frequency ?? 0;
   const hasil = useMemo(() => chillerCalc(frequencySafe), [frequencySafe]);
 
   return (
@@ -37,8 +39,36 @@ function AllData() {
 
           <div className="bg-green-100 rounded-xl shadow-sm p-6 hover:shadow-md transition">
             <h2 className="text-lg font-semibold text-green-700 mb-3">Performance Calculation</h2>
+
+            {/* Input manual frekuensi */}
+            <div className="flex items-center gap-2 mb-3">
+              <label className="font-semibold text-sm">Input Frequency (Hz):</label>
+              <input
+                type="number"
+                step="1"
+                min="0"
+                value={frequencyManual}
+                onChange={(e) => setFrequencyManual(e.target.value)}
+                className="border px-2 py-1 rounded text-sm w-24"
+              />
+              <button
+                onClick={() => {
+                  const parsed = parseFloat(frequencyManual);
+                  if (!isNaN(parsed)) setSubmittedFreq(parsed);
+                }}
+                className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 text-sm"
+              >
+                Run
+              </button>
+              {submittedFreq !== null && (
+                <span className="text-xs text-gray-600">
+                  (Using {submittedFreq.toFixed(2)} Hz)
+                </span>
+              )}
+            </div>
+
             <ul className="space-y-2 text-sm text-green-900">
-              <li><span className="font-semibold">Frequency:</span> {frequency !== null ? frequency.toFixed(2) + " Hz" : "Loading..."}</li>
+              <li><span className="font-semibold">Frequency:</span> {frequencySafe.toFixed(2)} Hz</li>
               <li><span className="font-semibold">Flow:</span> {hasil.Q.toFixed(2)} m³/h</li>
               <li><span className="font-semibold">Velocity:</span> {hasil.velocity.toFixed(3)} m/s</li>
               <li><span className="font-semibold">COP:</span> {hasil.cop_operasional.toFixed(2)}</li>
@@ -71,90 +101,82 @@ function AllData() {
           </button>
         </div>
 
-        {/* Sensor per lantai (1–6) */}
-        <div>
-          <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
-            🌇 Sensor Suhu, RH, dan Tekanan per Lantai
-          </h2>
+        <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
+          🌇 Sensor Suhu, RH, dan Tekanan per Lantai
+        </h2>
 
-          {floors.map((floor) => (
-            <div key={floor} className="mb-10">
-              <h3 className="text-xl font-bold text-gray-700 mb-3">
-                🏢 Lantai {floor}
-              </h3>
-
-              <div className="overflow-x-auto rounded-lg shadow-md">
-                <table className="min-w-full table-auto text-sm text-gray-800">
-                  <thead className="bg-blue-100 sticky top-0">
-                    <tr>
-                      <th className="px-3 py-2 text-left border border-gray-300">Parameter</th>
-                      {lines.map((line) => (
-                        <th key={line} className="px-3 py-2 border border-gray-300 text-center">
-                          Line {line}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="bg-white hover:bg-blue-50 transition">
-                      <td className="px-3 py-2 font-medium border border-gray-200">🌡️ Suhu (°C)</td>
+        {floors.map((floor) => (
+          <div key={floor} className="mb-10">
+            <h3 className="text-xl font-bold text-gray-700 mb-3">🏢 Lantai {floor}</h3>
+            <div className="overflow-x-auto rounded-lg shadow-md">
+              <table className="min-w-full table-auto text-sm text-gray-800">
+                <thead className="bg-blue-100 sticky top-0">
+                  <tr>
+                    <th className="px-3 py-2 text-left border border-gray-300">Parameter</th>
+                    {lines.map((line) => (
+                      <th key={line} className="px-3 py-2 border border-gray-300 text-center">Line {line}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-white hover:bg-blue-50 transition">
+                    <td className="px-3 py-2 font-medium border border-gray-200">🌡️ Suhu (°C)</td>
+                    {lines.map((line) => (
+                      <td key={line} className="px-3 py-2 border border-gray-200 text-center">
+                        {suhu[`SL${floor}${line}`] !== undefined
+                          ? <span className="inline-block bg-blue-200 text-blue-800 px-2 py-0.5 rounded text-xs font-semibold">
+                              {suhu[`SL${floor}${line}`].toFixed(1)}
+                            </span>
+                          : "–"}
+                      </td>
+                    ))}
+                  </tr>
+                  <tr className="bg-gray-50 hover:bg-green-50 transition">
+                    <td className="px-3 py-2 font-medium border border-gray-200">💧 RH (%)</td>
+                    {lines.map((line) => (
+                      <td key={line} className="px-3 py-2 border border-gray-200 text-center">
+                        {rh[`RHL${floor}${line}`] !== undefined
+                          ? <span className="inline-block bg-green-200 text-green-800 px-2 py-0.5 rounded text-xs font-semibold">
+                              {rh[`RHL${floor}${line}`].toFixed(1)}
+                            </span>
+                          : "–"}
+                      </td>
+                    ))}
+                  </tr>
+                  {floor === 1 && (
+                    <tr className="bg-white hover:bg-yellow-50 transition">
+                      <td className="px-3 py-2 font-medium border border-gray-200">🧭 Tekanan (Pa)</td>
                       {lines.map((line) => (
                         <td key={line} className="px-3 py-2 border border-gray-200 text-center">
-                          {suhu[`SL${floor}${line}`] !== undefined
-                            ? <span className="inline-block bg-blue-200 text-blue-800 px-2 py-0.5 rounded text-xs font-semibold">
-                                {suhu[`SL${floor}${line}`].toFixed(1)}
+                          {pressure[`PAL1${line}`] !== undefined
+                            ? <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-semibold">
+                                {pressure[`PAL1${line}`].toFixed(1)}
                               </span>
                             : "–"}
                         </td>
                       ))}
                     </tr>
-                    <tr className="bg-gray-50 hover:bg-green-50 transition">
-                      <td className="px-3 py-2 font-medium border border-gray-200">💧 RH (%)</td>
-                      {lines.map((line) => (
-                        <td key={line} className="px-3 py-2 border border-gray-200 text-center">
-                          {rh[`RHL${floor}${line}`] !== undefined
-                            ? <span className="inline-block bg-green-200 text-green-800 px-2 py-0.5 rounded text-xs font-semibold">
-                                {rh[`RHL${floor}${line}`].toFixed(1)}
-                              </span>
-                            : "–"}
-                        </td>
-                      ))}
-                    </tr>
-
-                    {floor === 1 && (
-                      <tr className="bg-white hover:bg-yellow-50 transition">
-                        <td className="px-3 py-2 font-medium border border-gray-200">🧭 Tekanan (Pa)</td>
-                        {lines.map((line) => (
-                          <td key={line} className="px-3 py-2 border border-gray-200 text-center">
-                            {pressure[`PAL1${line}`] !== undefined
-                              ? <span className="inline-block bg-yellow-200 text-yellow-800 px-2 py-0.5 rounded text-xs font-semibold">
-                                  {pressure[`PAL1${line}`].toFixed(1)}
-                                </span>
-                              : "–"}
-                          </td>
-                        ))}
-                      </tr>
-                    )}
-                  </tbody>
-                </table>
-              </div>
+                  )}
+                </tbody>
+              </table>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       {/* Modal */}
-      {showChillerModal && <HmiChiller onClose={() => setShowChillerModal(false)} />}
+      {showChillerModal && (
+        <HmiChiller
+          onClose={() => setShowChillerModal(false)}
+        />
+      )}
       {showSensorModal && <HmiSensor onClose={() => setShowSensorModal(false)} />}
 
-      {/* Footer credit */}
       <div className="text-center text-xs text-gray-500 mt-10 mb-4">
         Dibuat oleh <span className="font-semibold text-blue-600">Harizza Haryantoro</span>,
         mahasiswa Universitas Gadjah Mada – PT Sanghiang Perkasa.
       </div>
     </div>
-
-          
   );
 }
 
