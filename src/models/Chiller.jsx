@@ -5837,7 +5837,7 @@ const Chiller = ({ setShowChillerModal, setShowSensorModal, ...props }) => {
           maxWidth={2.5}
           lineHeight={1.5}
         >
-          {`T: ${suhu["SL3A"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL3A"]?.toFixed(1) ?? "-"}}`}
+          {`T: ${suhu["SL3A"]?.toFixed(1) ?? "-"}°C\nRH: ${rh["RHL3A"]?.toFixed(1) ?? "-"}`}
         </Text>
         <mesh
           name="SensorALT2"
